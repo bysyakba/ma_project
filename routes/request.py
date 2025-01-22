@@ -2,7 +2,7 @@
 class request:
     URL = 'http://new_learn_url'
     
-    def post(email, url=URL):
+    def post(email, url=URL, write=True):
         if ' ' in email:
             return 404
         
@@ -28,9 +28,10 @@ class request:
         
         if email is None:
             return 404
-        
-        with open('valid_emails.txt', 'a') as file:
-            file.write(email + "\n")
+
+        if write == True:
+            with open('valid_emails.txt', 'a') as file:
+                file.write(email + "\n")
         
         return 200, email
     
