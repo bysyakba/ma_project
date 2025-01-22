@@ -32,5 +32,5 @@ class request:
         with open('valid_emails.txt', 'a') as file:
             file.write(email + "\n")
         
-        return 200
+        return 200, email
     
